@@ -50,7 +50,6 @@ function updatePageLibrary (library) {
     
     for (let book of library) {
         createBookCard(book.title, book.author, book.pages, book.read, library.indexOf(book));
-        console.log(library.indexOf(book), book)
     }
 }
 

@@ -21,11 +21,11 @@ function createBookCard (book, bookIndex = 0) {
     const bookCard = createAndAppendElement("div", "bookCard", bookList);
     bookCard.setAttribute("data-bookIndex", bookIndex);
 
-    const title = createAndAppendElement("div", "bookTitle", bookCard, title);
-    const author = createAndAppendElement("div", "bookAuthor", bookCard, author);
-    const pages = createAndAppendElement("div", "bookPages", bookCard, pages);
-    const read = createAndAppendElement("div", "bookRead", bookCard, read);
-    read.checked = read;
+    const titleEl = createAndAppendElement("div", "bookTitle", bookCard, title);
+    const authorEl = createAndAppendElement("div", "bookAuthor", bookCard, author);
+    const pagesEl = createAndAppendElement("div", "bookPages", bookCard, pages);
+    const readEl = createAndAppendElement("div", "bookRead", bookCard, read);
+    readEl.checked = read;
     
     const deleteButton = createAndAppendElement("button", "deleteButton", bookCard, "Delete book");
     deleteButton.addEventListener("click", () => {

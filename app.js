@@ -31,6 +31,7 @@ function createBookCard (title, author, pages, read, bookIndex = 0) {
         myLibrary.splice(bookIndex, 1);
         updatePageLibrary(myLibrary);
     })
+    
     const TOGGLE_READ = createAndAppendElement("input", "toggleRead", BOOKCARD);
     TOGGLE_READ.setAttribute("type", "checkbox");
     TOGGLE_READ.checked = read;
@@ -42,7 +43,7 @@ function createBookCard (title, author, pages, read, bookIndex = 0) {
             myLibrary[bookIndex].read = false;
             updatePageLibrary(myLibrary);
         }
-      });
+    });
 }
 
 function updatePageLibrary (library) {
@@ -57,7 +58,8 @@ function addBookToLibraryFromPage() {
     const TITLE = document.getElementById("userTitle").value;
     const AUTHOR = document.getElementById("userAuthor").value;
     const PAGES = document.getElementById("userPages").value;
-    myLibrary.push(new Book(TITLE, AUTHOR, PAGES, true));
+    const READ = document.getElementById("isRead").checked;
+    myLibrary.push(new Book(TITLE, AUTHOR, PAGES, READ));
     updatePageLibrary(myLibrary);
 }
 

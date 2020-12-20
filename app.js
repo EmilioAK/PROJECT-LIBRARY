@@ -39,11 +39,10 @@ function createBookCard (book, bookIndex = 0) {
     TOGGLE_READ.addEventListener('change', function() {
         if (this.checked) {
             myLibrary[bookIndex].read = true;
-            updatePageLibrary(myLibrary);
         } else {
             myLibrary[bookIndex].read = false;
-            updatePageLibrary(myLibrary);
         }
+        updatePageLibrary(myLibrary);
     });
 }
 

@@ -15,7 +15,7 @@ function removeBook (title, library) {
     }
 }
 
-function createAndAddElement(htmlType, htmlClass, elementToAppendTo, textContent = "") {
+function createAndAppendElement(htmlType, htmlClass, elementToAppendTo, textContent = "") {
     const ELEMENT = document.createElement(htmlType);
     ELEMENT.classList.add(htmlClass);
     ELEMENT.textContent = textContent;
@@ -25,14 +25,14 @@ function createAndAddElement(htmlType, htmlClass, elementToAppendTo, textContent
 
 function createBookCard (title, author, pages, read) {
     const BOOKLIST = document.getElementById("bookList");
-    const BOOKCARD = createAndAddElement("div", "bookCard", BOOKLIST);
+    const BOOKCARD = createAndAppendElement("div", "bookCard", BOOKLIST);
 
-    const TITLE = createAndAddElement("div", "bookTitle", BOOKCARD, title);
-    const AUTHOR = createAndAddElement("div", "bookAuthor", BOOKCARD, author);
-    const PAGES = createAndAddElement("div", "bookPages", BOOKCARD, pages);
-    const READ = createAndAddElement("div", "bookRead", BOOKCARD, read);
+    const TITLE = createAndAppendElement("div", "bookTitle", BOOKCARD, title);
+    const AUTHOR = createAndAppendElement("div", "bookAuthor", BOOKCARD, author);
+    const PAGES = createAndAppendElement("div", "bookPages", BOOKCARD, pages);
+    const READ = createAndAppendElement("div", "bookRead", BOOKCARD, read);
     
-    const DELETE_BUTTON = createAndAddElement("button", "deleteButton", BOOKCARD, "Delete book");
+    const DELETE_BUTTON = createAndAppendElement("button", "deleteButton", BOOKCARD, "Delete book");
     DELETE_BUTTON.addEventListener("click", () => {
         removeBook(title, myLibrary);
         updatePageLibrary(myLibrary)

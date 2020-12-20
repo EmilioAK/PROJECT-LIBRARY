@@ -33,16 +33,13 @@ function createBookCard (title, author, pages, read, bookIndex = 0) {
     })
     const TOGGLE_READ = createAndAppendElement("input", "toggleRead", BOOKCARD);
     TOGGLE_READ.setAttribute("type", "checkbox");
+    TOGGLE_READ.checked = read;
     TOGGLE_READ.addEventListener('change', function() {
         if (this.checked) {
             myLibrary[bookIndex].read = true;
-            console.log(myLibrary[bookIndex].read);
-            console.log(READ.checked);
             updatePageLibrary(myLibrary);
         } else {
             myLibrary[bookIndex].read = false;
-            console.log(myLibrary[bookIndex].read);
-            console.log(READ.checked);
             updatePageLibrary(myLibrary);
         }
       });

@@ -63,4 +63,4 @@ function addBookToLibraryFromPage() {
     updatePageLibrary(myLibrary);
 }
 
-document.getElementById("newBook").addEventListener("click", addBookToLibraryFromPage)
+document.getElementById("newBook").addEventListener("click", addBookToLibraryFromPage);

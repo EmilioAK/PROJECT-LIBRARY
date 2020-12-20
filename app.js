@@ -15,7 +15,8 @@ function createAndAppendElement(htmlType, htmlClass, elementToAppendTo, textCont
     return ELEMENT;
 }
 
-function createBookCard (title, author, pages, read, bookIndex = 0) {
+function createBookCard (book, bookIndex = 0) {
+    const { title, author, pages, read } = book;
     const BOOKLIST = document.getElementById("bookList");
     const BOOKCARD = createAndAppendElement("div", "bookCard", BOOKLIST);
     BOOKCARD.setAttribute("data-bookIndex", bookIndex);
@@ -50,7 +51,7 @@ function updatePageLibrary (library) {
     document.querySelector("#bookList").innerHTML = ""; //Clears it on each call so it doesn't keep old values but just shows the current list
     
     for (let book of library) {
-        createBookCard(book.title, book.author, book.pages, book.read, library.indexOf(book));
+        createBookCard(book, library.indexOf(book));
     }
 }
 

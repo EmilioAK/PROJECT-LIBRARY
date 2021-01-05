@@ -48,10 +48,8 @@ function createBookCard (book, bookIndex = 0) {
 
 function updatePageLibrary (library) {
     document.querySelector("#bookList").innerHTML = ""; //Clears it on each call so it doesn't keep old values but just shows the current list
-    
-    for (let book of library) {
-        createBookCard(book, library.indexOf(book));
-    }
+
+    library.forEach((book, index) => createBookCard(book, index));
 }
 
 function addBookToLibraryFromPage() {
